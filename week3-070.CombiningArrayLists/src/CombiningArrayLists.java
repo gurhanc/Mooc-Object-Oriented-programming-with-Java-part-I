@@ -3,6 +3,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class CombiningArrayLists {
+    
+    
+    public static void combine(ArrayList<Integer> first, ArrayList<Integer> second) {
+        
+        int i;
+        
+        for (i=0;i<second.size();i++) {
+            first.add(second.get(i));
+        }
+    }
 
     public static void main(String[] args) {
 
