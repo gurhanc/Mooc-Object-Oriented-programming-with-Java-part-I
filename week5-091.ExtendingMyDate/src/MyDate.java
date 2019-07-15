@@ -31,5 +31,39 @@ public class MyDate {
 
         return false;
     }
+    
+    public void advance() {
+        
+        this.day += 1;
+        
+        if (this.day == 31) {
+            this.day = 1;
+            this.month += 1;
+            if (this.month == 13) {
+                this.month = 1;
+                this.year += 1;
+            }
+        }
+        
+    }
+    
+    public void advance(int numberOfDays) {
+        int i;
+        
+        for (i=0;i<numberOfDays;i++) {
+            advance();
+        }
+    }
+    
+    
+    public MyDate afterNumberOfDays(int days) {
+        
+        MyDate newMyDate = new MyDate(this.day,this.month,this.year);
+        
+        newMyDate.advance(days);
+        
+        return newMyDate;
+    }
+   
 
 }
