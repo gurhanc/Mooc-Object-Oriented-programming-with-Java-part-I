@@ -37,7 +37,7 @@ public class MyDate {
      * Copy the method here since it eases this assignment considerably.
      */
     public int differneceInYears(MyDate compared) {
-        return -99;
+        return Math.abs(((this.year - compared.year)*365 + (this.month - compared.month)*30 + (this.day - compared.day))/365);
     }
 
   
