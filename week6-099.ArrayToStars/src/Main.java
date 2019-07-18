@@ -8,6 +8,16 @@ public class Main {
     }
 
     public static void printArrayAsStars(int[] array) {
-        // write code here
+        
+        int i;
+        int k;
+        
+        for (i=0;i<array.length;i++) {
+            String star = "";
+            for (k=0;k<array[i];k++) {
+                star += "*";
+            }
+            System.out.println(star);
+        }
     }
 }
