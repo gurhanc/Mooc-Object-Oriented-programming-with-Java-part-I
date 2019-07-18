@@ -8,6 +8,12 @@ public class Main {
     }
 
     public static void printElegantly(int[] array) {
-        // Write code here
+        int i;
+        String result = "";
+        for (i=0;i<array.length-1;i++) {
+            System.out.print(result+array[i]+", ");
+        }
+        result += array[array.length-1];
+        System.out.println(result);
     }
 }
