@@ -1,12 +1,37 @@
+import java.util.Scanner;
+
 public class Main {  
 
     public static void main(String[] args) {
-    // implement your program here
-    // do not put all to one method/class but rather design a proper structure to your program
-        
-    // Your program should use only one Scanner object, i.e., it is allowed to call 
-    // new Scanner only once. If you need scanner in multiple places, you can pass it as parameter
-            
+         Scanner scanner = new Scanner(System.in);
+         Birds birds = new Birds();
+         while (true) {
+             System.out.print("? ");
+             String command = scanner.nextLine();
+             if (command.equals("Add")) {
+                 System.out.println("Name: ");
+                 String name = scanner.nextLine();
+                 System.out.println("Latin Name: ");
+                 String latinName = scanner.nextLine();
+                 Bird bird = new Bird(name, latinName);
+                 birds.addBird(bird); 
+             }
+             else if (command.equals("Observation")) {
+                 System.out.println("What was observed:?");
+                 String name = scanner.nextLine();
+                 birds.addObservation(name);
+             }
+             else if (command.equals("Statistics")) {
+                 birds.printAll();
+             }
+             else if (command.equals("Show")) {
+                 System.out.println("What? ");
+                 String name = scanner.nextLine();
+                 birds.print(name);
+             }
+             else if (command.equals("Quit")) {
+                 break;
+             }
+         }     
     }
-
 }
