@@ -5,11 +5,24 @@ public class BinarySearch {
 
         while (beginning <= end) {
             int middle = (beginning + end) / 2;
+            if (beginning == end) {
+                if (array[middle] == searchedValue) {
+                return true;
+            }
+                else {
+                    break;
+                }
+            }
             if (array[middle] == searchedValue) {
                 return true;
             }
-
-            // restrict the search area 
+            if (array[middle] < searchedValue) {
+                beginning = middle+1;
+            }
+            
+            if (array[middle] > searchedValue) {
+                end = middle;
+            }
         }
         return false;
     }
